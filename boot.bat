@@ -26,6 +26,7 @@ if "%batman%"=="batman -install pack" (
 
     echo.
     echo [ok] BATMAN OS installed!
+echo [location] %root%
 )
 
 goto boot
