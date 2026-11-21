@@ -2,39 +2,30 @@
 @echo off
 title boot
 
+set "root=%USERPROFILE%\Documents\batman os"
+
 :boot
-if not exist "%USERPROFILE%\Documents\bat os\apps\" (
-    echo [error] \bat os\apps
-) else (
-    echo [ok] \bat os\apps
-)
-
-if not exist "%USERPROFILE%\Documents\bat os\system\" (
-    echo [error] \bat os\system
-) else (
-    start "" "%USERPROFILE%\Documents\bat os\system\system.bat"
-)
-
-if not exist "%USERPROFILE%\Documents\bat os\userdata\" (
-    echo [error] \bat os\userdata
-) else (
-    start "" "%USERPROFILE%\Documents\bat os\system\system.bat"
-)
-
 set /p batman=root$ 
 
 if "%batman%"=="batman -install pack" (
-    mkdir "%USERPROFILE%\Documents\bat os\apps"
-    timeout /t 1 /nobreak >nul
-    echo [ok] \bat os\apps
 
-    mkdir "%USERPROFILE%\Documents\bat os\system"
-    timeout /t 1 /nobreak >nul
-    echo [ok] \bat os\system
+    mkdir "%root%\userdata" 2>nul
+    echo [ok] \batman os\userdata
 
-    mkdir "%USERPROFILE%\Documents\bat os\userdata"
-    timeout /t 1 /nobreak >nul
-    echo [ok] \bat os\userdata
+    mkdir "%root%\appdata" 2>nul
+    echo [ok] \batman os\appdata
+
+    mkdir "%root%\boot" 2>nul
+    echo [ok] \batman os\boot
+
+    mkdir "%root%\backup" 2>nul
+    echo [ok] \batman os\backup
+
+    mkdir "%root%\system" 2>nul
+    echo [ok] \batman os\system
+
+    echo.
+    echo [ok] BATMAN OS installed!
 )
 
-if "%batman%"=="whoami" echo [root] %USERNAME%
+goto boot
