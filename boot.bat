@@ -1,7 +1,7 @@
 
 @echo off
 title boot
-
+set "loc=%USERPROFILE%\Documents\batman os"
 set "root=%USERPROFILE%\Documents\batman os"
 
 :boot
@@ -26,7 +26,7 @@ if "%batman%"=="batman -install pack" (
 
     echo.
     echo [ok] BATMAN OS installed!
-echo [location] %root%
+echo [location] %loc%
 )
 
 goto boot
